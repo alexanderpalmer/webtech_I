@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Aufgabe 1 - Flexbox</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			header,
+			main {
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			header h1 {
+				margin: 12px;
+			}
+
+			main {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+
+				background-color: rgba(210, 210, 210, 0.8);
+				padding: 10px;
+			}
+
+			main p {
+				width: 200px;
+				background-color: aquamarine;
+				padding: 4px;
+				margin: 2px;
+				border-top: 2px solid blue;
+				border-bottom: 2px solid blue;
+			}
+
+			main p > strong {
+				display: inline-block;
+				background-color: darkblue;
+				color: white;
+				padding: 2px;
+			}
+
+			main p:nth-of-type(1) {
+				order: 2;
+				flex-grow: 1.5;
+			}
+
+			main p:nth-of-type(2) {
+				order: 3;
+				background-color: darkblue;
+				border-top: 5px solid aquamarine;
+				border-bottom: 5px solid aquamarine;
+				color: white;
+			}
+
+			main p:nth-of-type(2) > strong {
+				background-color: aquamarine;
+				color: black;
+			}
+
+			main p:nth-of-type(3) {
+				order: 1;
+			}
+
+			main p:nth-of-type(4) {
+				order: 0;
+				width: 100%;
+			}
+
+			@media only screen and (max-width: 700px) {
+				main {
+					flex-direction: column;
+				}
+
+				main p {
+					width: 100%;
+					order: inherit !important;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<h1>Flexbox - Aufgabe 27</h1>
+		</header>
+		<main>
+			<p>
+				<strong>Absatz 1</strong>
+				Velit esse velit excepteur adipisicing pariatur eu laboris dolore nulla in mollit non. Enim ullamco pariatur nulla non. Qui Lorem aliquip exercitation ipsum qui in. Ullamco consequat velit
+				irure labore sint labore. Reprehenderit ex culpa aliquip ullamco ex commodo. Excepteur anim ut nostrud aliqua officia adipisicing eu quis.
+			</p>
+
+			<p>
+				<strong>Absatz 2</strong>
+				Velit esse velit excepteur adipisicing pariatur eu laboris dolore nulla in mollit non. Enim ullamco pariatur nulla non. Qui Lorem aliquip exercitation ipsum qui in. Ullamco consequat velit
+				irure labore sint labore. Reprehenderit ex culpa aliquip ullamco ex commodo. Excepteur anim ut nostrud aliqua officia adipisicing eu quis.
+			</p>
+
+			<p>
+				<strong>Absatz 3</strong>
+				Velit esse velit excepteur adipisicing pariatur eu laboris dolore nulla in mollit non. Enim ullamco pariatur nulla non. Qui Lorem aliquip exercitation ipsum qui in. Ullamco consequat velit
+				irure labore sint labore. Reprehenderit ex culpa aliquip ullamco ex commodo. Excepteur anim ut nostrud aliqua officia adipisicing eu quis.
+			</p>
+
+			<p>
+				<strong>Absatz 4</strong>
+				Velit esse velit excepteur adipisicing pariatur eu laboris dolore nulla in mollit non. Enim ullamco pariatur nulla non. Qui Lorem aliquip exercitation ipsum qui in. Ullamco consequat velit
+				irure labore sint labore. Reprehenderit ex culpa aliquip ullamco ex commodo. Excepteur anim ut nostrud aliqua officia adipisicing eu quis.
+			</p>
+		</main>
+	</body>
+</html>

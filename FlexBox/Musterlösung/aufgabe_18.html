@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Flexbox - Aufgabe 18</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			/*
+			Alle Boxen sind 200 Pixel breit, somit eine Ausdehnung von 800px
+			flex-container ist aber nur 600px breit, somit ist eine Übergrösse von 200px gegeben
+
+			flex-shrink ist auf 1 gesetzt, also 4 Einheiten (200px / 4 => 50px)
+			Jede Box "shrinkt" also um 50 Pixel, somit Endgrösse 150px
+
+			*/
+
+			.flex-container {
+				display: flex;
+				flex-direction: row;
+				margin: 0;
+				padding: 0;
+				width: 600px;
+				height: 600px;
+				background-color: rgba(0, 255, 255, 0.3);
+			}
+			.flex-container div {
+				background-color: rgb(211, 211, 211);
+				flex-basis: 200px;
+				flex-shrink: 1;
+				height: 100px;
+				border: 1px solid black;
+				padding: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Flexbox - Aufgabe 18</h1>
+		<div class="flex-container">
+			<div>Box 1</div>
+			<div>Box 2</div>
+			<div>Box 3</div>
+			<div>Box 4</div>
+		</div>
+	</body>
+</html>

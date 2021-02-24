@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Flexbox - Aufgabe 15</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			.flex-container {
+				display: flex;
+				flex-direction: row;
+				margin: 0;
+				padding: 0;
+				width: 600px;
+				height: 600px;
+				background-color: rgba(0, 255, 255, 0.3);
+			}
+			.flex-container div {
+				background-color: rgb(211, 211, 211);
+				width: 100px;
+				flex-shrink: 0;
+				height: 100px;
+				border: 1px solid black;
+				padding: 5px;
+			}
+
+			/* Box 2 wird 180 Pixel gross, Box 3 wird 220 Pixel gross
+				flex-container - 4x div-Breite in Flex => 600px - (4x100) = 200px;
+				Standardgrösse von Box 2: 100px 
+				Standardgrösse von Box 3: 100px
+
+				Rest von flex-container (200px) wird durch fünf geteilt, da 
+				Box 2 -> flex-grow:2 sowie Box 3 -> flex-grow:3 => (2+3=5)
+				Somit ist eine Resteinheit 40 Pixel
+
+				Box 2: 100px + 2x40px = 180px
+				Box 3: 100px + 3x40px = 220px
+				*/
+			.flex-container div:nth-of-type(2) {
+				flex-grow: 2;
+			}
+
+			.flex-container div:nth-of-type(3) {
+				flex-grow: 3;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Flexbox - Aufgabe 15</h1>
+		<div class="flex-container">
+			<div>Box 1</div>
+			<div>Box 2</div>
+			<div>Box 3</div>
+			<div>Box 4</div>
+		</div>
+	</body>
+</html>
